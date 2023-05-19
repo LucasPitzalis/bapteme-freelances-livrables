@@ -10,8 +10,8 @@ Je cite quelques un de ces points ici puisqu'ils s'appliquent à l'ensemble de t
 - Pense à bien utiliser le camelCase dans les noms de variables/fonctions qui contiennent plusieurs mots. Ca na l'air de rien mais ça aide vraiment pour les noms à rallonge, donc autant prendre la bonne habitude.
 - Les noms des variables et fonctions que tu déclares doivent au maximum être explicites. Par exemple, ta méthode `teacher` de `TeacherController`, sert à récupérer la liste de tous les profs et à les afficher dans la vue correspondante. Tu pourrais renommer cette méthode `list` par exemple.
 Autre exemple, à l'intérieur de cette même méthode, ta variable `$teacher` qui contient la liste de tous les profs. Cela porte à confusion car tu écris teacher au singulier alors qu'il s'agit d'un tableau contenant l'ensemble des profs. `$teacherList` ou `$teachers` me paraissent plus appropriés.
-- Pour certaines fonctionnalités (ajouts et modifications), tu as deux routes et deux méthodes correspondantes dans tes contrôleurs : une méthode get pour afficher le formulaire,une méthode post pour effectuer l'action. Tu as généralement laissé le même commentaire en descriptions pour ces deux méthodes, ce qui peut porter à confusion. Si tu laisses des commentaires dans le code, assures toi qu'ils sont clairs et pertinents. Ici, le fait d'avoir le même commentaire pour deux choses différentes peut porter à confusion. D'ailleurs, les commentaires, ça n'est pas obligatoire. Si tu estimes par exemple que les noms des méthodes sont suffisamment explicites pour comprendre leur utilisation, tu peux t'abstenir de commenter.
-- Essaie d'utiliser `===` au maximum plutôt que `==`. Pour rappel, `===` compare aussi le type, ce que ne fait pas `==`. Typiquement `"1" === 1` est `false` alors que `"1" == 1` est `true`. Personnellement, j'ai l'habitude de n'utiliser par défaut que `===` et `==` uniquement si je sais que j'ai une bonne raison de le faire (et franchement, c'est rare).
+- Si tu laisses des commentaires dans le code, assures toi qu'ils sont clairs et pertinents. Tu as parfois laissé en commentaire la même description pour des choses différentes (méthode d'afficahge d'un formulaire et méthode gérant le traitement de celui-ci), ce qui peut porter à confusion. D'ailleurs, les commentaires, ça n'est pas obligatoire. Si tu estimes par exemple que les noms des méthodes sont suffisamment explicites pour comprendre leur utilisation, tu peux t'abstenir de commenter.
+- Essaie d'utiliser `===` au maximum plutôt que `==`. Pour rappel, `===` compare aussi le type, ce que ne fait pas `==`. Typiquement `"1" === 1` est `false` alors que `"1" == 1` est `true`. Personnellement, j'ai l'habitude de n'utiliser par défaut que `===`, et `==` uniquement si je sais que j'ai une bonne raison de le faire (et franchement, c'est rare).
 
 ## Routes
 
@@ -22,7 +22,9 @@ J'ai 2 petits points à soulever au niveau de ton mapping des routes de l'app :
 
 ## Retour des méthodes dans les modèles
 
-Globalement tes modèles sont très bien, j'ai peu de choses à en dire. Il y a quand même une chose qui a attiré mon attention. Dans les méthodes de CRUD qui font autre chose que de la lecture (donc tes méthodes `insert`, `update` et `delete`), on veut généralement renvoyer `true` ou `false` selon si la modification en base de données a réussi ou échoué. Il y a certains cas (tes méthodes `delete`) ou tu retourne directement `true`, sans vérifier que l'action a fonctionné. Je t'invite à appliquer ce que tu as fait pour les autres cas (`update` et `insert`) pour retourner `true` si au moins une ligne de la BDD est modifiée ou `false` dans le cas contraire.
+Globalement tes modèles sont très bien, j'ai peu de choses à en dire. Il y a quand même une chose qui a attiré mon attention. Dans les méthodes de CRUD qui font autre chose que de la lecture (donc tes méthodes `insert`, `update` et `delete`), on veut généralement renvoyer `true` ou `false` selon si la modification en base de données a réussi ou échoué. Il y a certains cas (tes méthodes `delete`) ou tu retourne directement `true`, sans vérifier que l'action a fonctionné. 
+
+Je t'invite à appliquer ce que tu as fait pour les autres cas (`update` et `insert`) pour retourner `true` si au moins une ligne de la BDD est modifiée ou `false` dans le cas contraire.
 
 ## PDO::exec vs PDOStatement::execute
 
@@ -72,8 +74,10 @@ Je passe rapidement sur cet aspect car il me semble que tu as bien compris comme
 
 Je note que pour le moment cette fonctionnalité n'est pas correctement implémentée. Cela faisait partie des bonus, donc pas d'inquiétude, c'est déjà bien d'en être arrivé là !
 J'ai vu qu'il y a quelques petites erreurs dans tes methodes `teacherUpdatePost` et `studentUpdatePost`, ainsi qu'une indentation un peu bizarre. Je devine qu'il y a eu surtout un début de copier-coller qui n'a pas encore abouti à quelque chose de propre :)
+
 Pour te débloquer sur cette fonctionnalité :
 Tu n'as pas besoin de de remplir l'attribut `action` de la balise `<form>` de ton formulaire (et c'est valable aussi pour les formulaires d'ajout). Si j'ai bonne mémoire, laisser `action` vide (ou ne carrément pas le mettre) permet d'envoyer le formulaire à la même adresse. Ca tombe bien, puisque la route post qui traite le formulaire a justement la même adresse que la route get qui permet de l'afficher !
+
 Si tu voir des choses un peu avancées, je te recommande de regarder dans la correction des formulaires. Tu verras notamment comment présélectionner dynamique une option sur un `<select>`, et comment on peut factoriser les formulaires d'ajout et de modification en un seul template !
 
 ## Conclusion
