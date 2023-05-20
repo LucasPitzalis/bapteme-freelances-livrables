@@ -22,7 +22,7 @@ J'ai 2 petits points à soulever au niveau de ton mapping des routes de l'app :
 
 ## Retour des méthodes dans les modèles
 
-Globalement tes modèles sont très bien, j'ai peu de choses à en dire. Il y a quand même une chose qui a attiré mon attention. Dans les méthodes de CRUD qui font autre chose que de la lecture (donc tes méthodes `insert`, `update` et `delete`), on veut généralement renvoyer `true` ou `false` selon si la modification en base de données a réussi ou échoué. Il y a certains cas (tes méthodes `delete`) ou tu retourne directement `true`, sans vérifier que l'action a fonctionné. 
+Globalement tes modèles sont très bien, j'ai peu de choses à en dire. Il y a quand même une chose qui a attiré mon attention. Dans les méthodes de CRUD qui font autre chose que de la lecture (donc tes méthodes `insert`, `update` et `delete`), on veut généralement renvoyer `true` ou `false` selon si la modification en base de données a réussi ou échoué. Il y a certains cas (tes méthodes `delete`) ou tu retourne directement `true`, sans vérifier que l'action a fonctionné.
 
 Je t'invite à appliquer ce que tu as fait pour les autres cas (`update` et `insert`) pour retourner `true` si au moins une ligne de la BDD est modifiée ou `false` dans le cas contraire.
 
@@ -78,10 +78,10 @@ J'ai vu qu'il y a quelques petites erreurs dans tes methodes `teacherUpdatePost`
 Pour te débloquer sur cette fonctionnalité :
 Tu n'as pas besoin de de remplir l'attribut `action` de la balise `<form>` de ton formulaire (et c'est valable aussi pour les formulaires d'ajout). Si j'ai bonne mémoire, laisser `action` vide (ou ne carrément pas le mettre) permet d'envoyer le formulaire à la même adresse. Ca tombe bien, puisque la route post qui traite le formulaire a justement la même adresse que la route get qui permet de l'afficher !
 
-Si tu voir des choses un peu avancées, je te recommande de regarder dans la correction des formulaires. Tu verras notamment comment présélectionner dynamique une option sur un `<select>`, et comment on peut factoriser les formulaires d'ajout et de modification en un seul template !
+Si tu voir des choses un peu avancées, je te recommande de regarder dans la correction des formulaires. Tu verras notamment comment présélectionner dynamiquement une option sur un `<select>`, et comment on peut factoriser les formulaires d'ajout et de modification en un seul template !
 
 ## Conclusion
 
 La plupart de mes remarques ont vocation à développer ta rigueur et la cohérence de ton code. Développer de bonnes habitudes peut te permettre de travailler plus facilement en équipe et d'optimiser ton code, donc c'est toujours intéressant.
 
-Bon, j'ai été très bavard ! Mais rassures-toi, c'est bon signe. Tu as été plus loin que la plupart des autres apprenants, donc logiquement, qui dit plus de code dit plus de choses à dire. Quand bien même tu aurais fait tout ça a posteriori avec la correction, cela montre que tu as bien compris beaucoup de choses et que tu es très impliqué !
+Bon, j'ai été très bavard ! Mais rassures-toi, c'est bon signe. Tu as été plus loin que la plupart des autres apprenants, donc logiquement, qui dit plus de code dit plus de choses à en dire. Quand bien même tu aurais fait tout ça a posteriori avec la correction, cela montre que tu as bien compris beaucoup de choses et que tu es très impliqué !
