@@ -1,7 +1,7 @@
 # Feedback Parcours S6 - Apprenant 1
 
 Bonjour Apprenant 1, voilà mon feedback à ta demande concernant ton parcours de S6.
-Dans l'ensemble c'est un bon parcours, quasiment tout ce que tu as codé jusque là fonctionne, le code est relativement succin et propre. Tu as même attaqué une bonne partie des bonus, c'est super !
+Dans l'ensemble c'est un bon parcours, quasiment tout ce que tu as codé jusque là fonctionne, le code est relativement succinct et propre. Tu as même attaqué une bonne partie des bonus, c'est super ! Et bien joué pour l'affichage conditionnel des liens dans la navbar, c'est le genre de petit détails qui fait plaisir, d'autant plus que ce n'était pas dans la correction.
 
 Un certain nombre des points que je vais soulever relèvent de la qualité et de la clarté du code plutôt que de la question de son bon fonctionnement. En entreprise, tu seras amené à reprendre du code produit par d'autres, et à l'inverse, tes collègues pourront parfois continuer ce que tu as commencé. Du coup, garder un propre lisible et bien organisé aidera tout le monde à économiser du temps et des neurones dans ce genre de cas !
 
